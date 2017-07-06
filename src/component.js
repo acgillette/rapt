@@ -1,19 +1,33 @@
-require('./noise.js');
+var SimplexNoise = require('simplex-noise');
 
 AFRAME.registerComponent('terrain', {
   schema: {
     width: {type : 'number', default: 500},
     height: {type: 'number', default:500},
-    terrainHeight: {type: 'number', default: 0}
+    flying: {type: 'number', default: 0}
   },
-  update: function() {
+
+  update: function(oldData) {
     var data = this.data;
     var el = this.el;
     var scl = 10;
 
 
+
     this.rows = data.height / scl;
     this.cols = data.width / scl;
+    if(this.terrainArray === undefined) {
+      this.terrainArray = new Array();
+      for(var y = 0; y < this.rows; y++) {
+        this.terrainArray.push(new Array(this.cols));
+        for(var x = 0; x < this.cols; x++) {
+          this.terrainArray[y][x] = 0;
+        }
+      }
+    }
+
+
+
 
     var geometry = new THREE.Geometry();
     var verticesCount = 0;
@@ -21,9 +35,9 @@ AFRAME.registerComponent('terrain', {
     for(var y = 0; y < this.rows; y++) {
       for(var x = 0; x < this.cols; x++) {
         geometry.vertices.push(
-	          new THREE.Vector3( x * scl, y * scl, data.terrainHeight ),
-	          new THREE.Vector3( x * scl, (y + 1) * scl, data.terrainHeight ),
-            new THREE.Vector3( (x + 1) * scl, y * scl, data.terrainHeight )
+	          new THREE.Vector3( x * scl, y * scl, this.terrainArray[y][x] ),
+	          new THREE.Vector3( x * scl, (y + 1) * scl, this.terrainArray[y][x] ),
+            new THREE.Vector3( (x + 1) * scl, y * scl, this.terrainArray[y][x] )
         );
         geometry.faces.push( new THREE.Face3( verticesCount, (verticesCount + 1), (verticesCount + 2) ));
         verticesCount += 3;
@@ -46,33 +60,26 @@ AFRAME.registerComponent('terrain', {
   tick: function(time, timeDelta) {
     var el = this.el;
     var terrain = el.getObject3D('mesh').geometry;
+    var data = this.data;
+    var simplex = new SimplexNoise();
+
 
     terrain.verticesNeedUpdate = true;
 
-    for (var i = 0; i < terrain.vertices.length; i++) {
-      var v = terrain.vertices[i];
-      // var yoff = flying;
-      // v.z = map(noise(xoff, yoff), 0, 1, -100, 100);
-        //xoff += 0.2;
-        //yoff += 0.2;
-      // terrain.verticesNeedUpdate = true;
+    var xoff = 0;
+    var yoff = data.flying;
+    data.flying -= 0.1;
 
-
+    for(var y = 0; y < this.rows; y++) {
+      this.terrainArray.push(new Array(this.cols));
+      for(var x = 0; x < this.cols; x++) {
+        this.terrainArray[y][x] = simplex.noise2D(xoff, yoff) * 10;
+        xoff += 0.2;
+      }
+      yoff += 0.2;
     }
-  // to-do: find perlin noise library or make script, figure out how to use terrainHeight array
-  //   var flying = -0.1;
-  // for every vertice in the terrain model, change the z vertice
-  // using perlin noise
-  //   var yoff = flying;
-  //
-  //   for(var y = 0; y < this.rows; y++) {
-  //     var xoff = 0;
-  //     for(var x = 0; x < this.cols; x++) {
-  //      vertices.z = map(noise(xoff, yoff), 0, 1, -100, 100);
-  //       xoff += 0.2;
-  //     }
-  //     yoff += 0.2;
-  //   }
   }
+
+
 
 });
