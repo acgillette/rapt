@@ -122,34 +122,45 @@ AFRAME.registerComponent('terrain', {
     );
   },
   tick: function(time, timeDelta) {
-        // this.update();
-        var el = this.el;
-        if(el.getObject3D('mesh')) {
-          var terrain = el.getObject3D('mesh').children[0].geometry;
-          // console.log(terrain.vertices);
-
-          // var terrain = el.getObject3D('mesh').geometry;
-          // var data = this.data;
-          // var simplex = new SimplexNoise();
-          //
-          //
-          // terrain.verticesNeedUpdate = true;
-          //
-          // var xoff = 0;
-          // var yoff = data.flying;
-          // data.flying -= 0.1;
-          //
-          // for(var y = 0; y < this.rows; y++) {
-          //   this.terrainArray.push(new Array(this.cols));
-          //   for(var x = 0; x < this.cols; x++) {
-          //     this.terrainArray[y][x] = simplex.noise2D(xoff, yoff) * 10;
-          //     xoff += 0.2;
-          //   }
-          //   yoff += 0.2;
-          // }
+        // var el = this.el;
+        // if(el.getObject3D('mesh')) {
+        //   var terrain = el.getObject3D('mesh').children[0].geometry;
+        //   // console.log(terrain.vertices);
+        //
+        //   // var terrain = el.getObject3D('mesh').geometry;
+        //   var data = this.data;
+        //   var simplex = new SimplexNoise();
+        //   //
+        //   //
+        //   terrain.verticesNeedUpdate = true;
+        //   //
+        //   // var xoff = 0;
+        //   // var yoff = data.flying;
+        //   data.flying -= 0.1;
+        //   var yoff = data.flying;
+        //   var xoff = 0;
+        //
+        //   //
+        //   for (var i = 0; i < terrain.vertices.length; i++)
+        //     {
+        //       var v = terrain.vertices[i];
+        //       v.z = simplex.noise2D(xoff, yoff) * 10;
+        //       // do stuff with v...
+        //       yoff += 0.2;
+        //       xoff += 0.2;
+        //
+        //     }
+        //
+        //   // for(var y = 0; y < this.rows; y++) {
+        //   //   this.terrainArray.push(new Array(this.cols));
+        //   //   for(var x = 0; x < this.cols; x++) {
+        //   //     this.terrainArray[y][x] = simplex.noise2D(xoff, yoff) * 10;
+        //   //     xoff += 0.2;
+        //   //   }
+        //   //   yoff += 0.2;
+        //   // }
 
         }
 
-  }
 
 });
