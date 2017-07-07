@@ -10,8 +10,13 @@
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="terrain-obj" src="./src/terrain.obj"></a-asset-item>
+      </a-assets>
       <a-sphere color="white" radius="50" position="-37 85 -481"></a-sphere>
-      <a-entity terrain position="-328 -15 60" rotation="-90 0 0"></a-entity>
+      <a-entity obj-model="obj: #terrain-obj" rotation="-88 37 50" position="717 -135 111" material="wireframe: true"></a-entity>
+
+      <!-- <a-entity terrain position="-328 -15 60" rotation="-90 0 0"></a-entity> -->
       <a-sky color="black"></a-sky>
     </a-scene>
   </body>
