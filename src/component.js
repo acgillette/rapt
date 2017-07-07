@@ -1,4 +1,4 @@
-// var SimplexNoise = require('simplex-noise');
+var SimplexNoise = require('simplex-noise');
 //
 // AFRAME.registerComponent('terrain', {
 //   schema: {
@@ -100,8 +100,8 @@
 // });
 
 AFRAME.registerComponent('terrain', {
-  schema: {
-
+    schema: {
+      flying: {type: 'number', default: 0}
   },
   init: function() {
     var loader = new THREE.OBJLoader();
@@ -114,10 +114,42 @@ AFRAME.registerComponent('terrain', {
         object.traverse( function ( child ) {
           if ( child instanceof THREE.Mesh ) {
             child.material = material;
+            child.geometry = new THREE.Geometry().fromBufferGeometry( child.geometry );
           }
         } );
         that.el.setObject3D('mesh', object);
       }
     );
+  },
+  tick: function(time, timeDelta) {
+        // this.update();
+        var el = this.el;
+        if(el.getObject3D('mesh')) {
+          var terrain = el.getObject3D('mesh').children[0].geometry;
+          // console.log(terrain.vertices);
+
+          // var terrain = el.getObject3D('mesh').geometry;
+          // var data = this.data;
+          // var simplex = new SimplexNoise();
+          //
+          //
+          // terrain.verticesNeedUpdate = true;
+          //
+          // var xoff = 0;
+          // var yoff = data.flying;
+          // data.flying -= 0.1;
+          //
+          // for(var y = 0; y < this.rows; y++) {
+          //   this.terrainArray.push(new Array(this.cols));
+          //   for(var x = 0; x < this.cols; x++) {
+          //     this.terrainArray[y][x] = simplex.noise2D(xoff, yoff) * 10;
+          //     xoff += 0.2;
+          //   }
+          //   yoff += 0.2;
+          // }
+
+        }
+
   }
+
 });
