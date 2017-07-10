@@ -2,17 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! - A-Frame</title>
+    <title>Rapt</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-point-component/dist/aframe-point-component.min.js"></script>
     <script src="bundle.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-sphere color="white" radius="50" position="-37 85 -481"></a-sphere>
-      <a-entity terrain position="-328 -15 60" rotation="-90 0 0"></a-entity>
+      <a-assets>
+        <img id="planetTexture" src="./src/texture.jpg" />
+        <img id="starTexture" src="./src/startexture.jpg"  />
+      </a-assets>
+      <a-sphere src="#planetTexture" radius="50" position="-11 50 -553"
+                animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-sphere>
+      <a-entity terrain position="-1030 -113 414" rotation="-90 0 0"></a-entity>
+      <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black"></a-sky>
     </a-scene>
-  </body>
+    <script src="./src/starfield.js"></script>
+    </body>
 </html>
