@@ -22,7 +22,7 @@ AFRAME.registerComponent('terrain', {
             var simplex = new SimplexNoise();
             for(var i = 0; i < child.geometry.vertices.length; i++) {
               var v = child.geometry.vertices[i];
-              that.data.heightMap.push(map(simplex.noise2D(v.x / 1024.0, v.y / 1024.0), 0, 1, -100, 100));
+              v.z = map(simplex.noise2D(v.x / 1024.0, v.y / 1024.0), 0, 1, -100, 100);
             }
           }
         } );
@@ -36,21 +36,21 @@ AFRAME.registerComponent('terrain', {
   },
   tick: function(time, timeDelta) {
 
-        var el = this.el;
-        if(el.getObject3D('mesh')) {
-          var terrain = el.getObject3D('mesh').children[0].geometry;
-          var data = this.data;
-          var simplex = new SimplexNoise();
-
-          terrain.verticesNeedUpdate = true;
-
-          for (var i = 0; i < data.heightMap.length; i++)
-            {
-              var v = terrain.vertices[i];
-              v.z = data.heightMap[i];
-
-            }
-        }
+        // var el = this.el;
+        // if(el.getObject3D('mesh')) {
+        //   var terrain = el.getObject3D('mesh').children[0].geometry;
+        //   var data = this.data;
+        //   var simplex = new SimplexNoise();
+        //
+        //   terrain.verticesNeedUpdate = true;
+        //
+        //   for (var i = 0; i < data.heightMap.length; i++)
+        //     {
+        //       var v = terrain.vertices[i];
+        //       v.z = data.heightMap[i];
+        //
+        //     }
+        // }
       }
 
 
