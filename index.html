@@ -16,8 +16,10 @@
         <img id="planetTexture" src="./src/texture.jpg" />
         <img id="starTexture" src="./src/startexture.jpg"  />
       </a-assets>
-      <a-sphere src="#planetTexture" radius="50" position="-11 50 -553"
-                animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-sphere>
+      <!-- <a entity planet src="#planetTexture" position="-11 50 -553"
+                animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-sphere> -->
+      <a-entity planet src="#planetTexture" position="-11 50 -553"
+      animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-entity>
       <a-entity terrain position="-1030 -113 414" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black"></a-sky>
