@@ -15,14 +15,18 @@
     <a-scene>
       <a-assets>
         <script id="planetOrbit" type="template/nunjucks">
-          <a-entity animation__rotate="property: rotation; dur: 2000; easing: {{ easing }}; loop: true; to: 0 360 0">
-            <a-entity planet>
+          <a-entity animation__rotate="property: rotation; dur: 10000; easing: {{ easing }}; loop: true; to: 0 360 0">
+            <a-entity planet position="0 0 {{ orbitradius }}"
+              animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0">
             </a-entity>
           </a-entity>
         </script>
       </a-assets>
-      <a-entity planet position="-11 88 -1162"
-      animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-entity>
+      <!-- <a-entity planet position="-11 88 -1162"
+      animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-entity> -->
+      <a-entity template="src: #planetOrbit" data-orbitradius="1162" data-easing="linear"
+          position="0 0 0">
+      </a-entity>
       <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black"></a-sky>
