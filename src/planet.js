@@ -8,7 +8,7 @@ AFRAME.registerComponent('planet', {
   init: function() {
     var texture = new THREE.TextureLoader().load( "./planetTexture.png" );
 
-    var geometry = new THREE.SphereGeometry(getRandomInt(50, 200), 20, 20);
+    var geometry = new THREE.SphereGeometry(getRandomInt(50, 250), 20, 20);
     var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('./src/planetTexture.png') });
     var sphere = new THREE.Mesh(geometry, material);
 

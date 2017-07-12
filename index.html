@@ -24,15 +24,19 @@
       </a-assets>
       <!-- <a-entity planet position="-11 88 -1162"
       animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-entity> -->
-      <a-entity template="src: #planetOrbit" data-orbitradius="-1200" data-easing="linear" data-duration="100000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-2500" data-easing="linear" data-duration="80000"
           position="0 0 0">
       </a-entity>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-2500" data-easing="linear" data-duration="50000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-4000" data-easing="linear" data-duration="40000"
           position="0 0 0">
       </a-entity>
+      <a-entity template="src: #planetOrbit" data-orbitradius="-4700" data-easing="linear" data-duration="100000"
+          position="0 0 0">
+      </a-entity>
+
       <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
-      <a-sky color="black"></a-sky>
+      <a-sky color="black" radius="7000"></a-sky>
     </a-scene>
     <script src="./src/starfield.js"></script>
     </body>
