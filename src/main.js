@@ -1,3 +1,2 @@
-require('./component.js');
+require('./terrain.js');
 require('./musicforairports.js');
-// require('./starfield.js');

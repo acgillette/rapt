@@ -8,6 +8,10 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  devServer: {
+  host: '0.0.0.0',
+  disableHostCheck: true
+},
   watch: true,
 
   module: {

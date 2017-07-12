@@ -12,10 +12,6 @@ for(var i = 0; i < 10000; i++) {
   stars.push([ getRandomInt(-1000, 1000), getRandomInt(-1000, 1000), getRandomInt(-1000, 1000) ]);
 }
 
-console.log(stars);
-console.log(points);
-console.dir(points.components);
 setTimeout(function() {
     points.components.point.setPoints(stars);
-    console.log(points.components.point);
 }, 1000);
