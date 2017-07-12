@@ -8,19 +8,22 @@
     <script src="https://cdn.rawgit.com/mohayonao/web-audio-api-shim/master/build/web-audio-api-shim.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-point-component/dist/aframe-point-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="bundle.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="planetTexture" src="./src/texture.jpg" />
-        <img id="starTexture" src="./src/startexture.jpg"  />
+        <script id="planetOrbit" type="template/nunjucks">
+          <a-entity animation__rotate="property: rotation; dur: 2000; easing: {{ easing }}; loop: true; to: 0 360 0">
+            <a-entity planet>
+            </a-entity>
+          </a-entity>
+        </script>
       </a-assets>
-      <!-- <a entity planet src="#planetTexture" position="-11 50 -553"
-                animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-sphere> -->
-      <a-entity planet src="#planetTexture" position="-11 50 -553"
+      <a-entity planet position="-11 88 -1162"
       animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0"></a-entity>
-      <a-entity terrain position="-1030 -113 414" rotation="-90 0 0"></a-entity>
+      <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black"></a-sky>
     </a-scene>
