@@ -44,8 +44,19 @@
       <a-sky color="black" radius="10000"></a-sky>
     </a-scene>
     <section id="fragmentshader">
+      #ifdef GL_ES
+        precision mediump float;
+      #endif
+
       void main() {
-        gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0);
+    	   gl_FragColor = vec4(1.0,0.0,1.0,1.0);
+       }
+
+    </section>
+    <section id="vertexshader">
+
+      void main() {
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
       }
     </section>
     <script src="./src/starfield.js"></script>

@@ -6,6 +6,8 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+
+
 AFRAME.registerComponent('planet', {
   schema: {
     moons: {type: 'int', default: 0},
@@ -13,16 +15,23 @@ AFRAME.registerComponent('planet', {
 
   },
   init: function() {
+    var uniforms = {
+      u_resolution: { type: "v2", value: new THREE.Vector2() },
+    };
+
     var fShader = $('#fragmentshader');
-    var texture = new THREE.TextureLoader().load( "./planetTexture.png" );
+    var vShader = $('#vertexshader');
+
 
     var geometry = new THREE.SphereGeometry(getRandomInt(100, 250), 20, 20);
-    // var material = new THREE.MeshBasicMaterial( { wireframe: true } );
-    // var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('./src/planetTexture.png') });
 
     var material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: vShader.text(),
       fragmentShader: fShader.text()
+
     });
+
     var sphere = new THREE.Mesh(geometry, material);
 
     this.el.setObject3D('mesh', sphere);
