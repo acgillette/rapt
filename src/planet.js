@@ -15,9 +15,22 @@ AFRAME.registerComponent('planet', {
 
   },
   init: function() {
+    // var uniforms = {
+    //   u_resolution: { type: "v2", value: new THREE.Vector2() },
+    //   texture: { type: "t", value: THREE.ImageUtils.loadTexture( "./src/planetTexture.png" ) }
+    // };
+
     var uniforms = {
-      u_resolution: { type: "v2", value: new THREE.Vector2() },
+      "color1" : {
+      type : "c",
+      value : new THREE.Color(0xFF0000)
+      },
+      "color2" : {
+        type : "c",
+        value : new THREE.Color(0x008000)
+      }
     };
+
 
     var fShader = $('#fragmentshader');
     var vShader = $('#vertexshader');
@@ -25,11 +38,11 @@ AFRAME.registerComponent('planet', {
 
     var geometry = new THREE.SphereGeometry(getRandomInt(100, 250), 20, 20);
 
+    // var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('./src/planetTextures/3.png') });
     var material = new THREE.ShaderMaterial({
       uniforms: uniforms,
       vertexShader: vShader.text(),
       fragmentShader: fShader.text()
-
     });
 
     var sphere = new THREE.Mesh(geometry, material);
