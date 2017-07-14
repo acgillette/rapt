@@ -41,8 +41,9 @@ AFRAME.registerComponent('planet', {
     var fShader = $('#fragmentshader');
     var vShader = $('#vertexshader');
 
+    var radius = getRandomInt(100, 250);
 
-    var geometry = new THREE.SphereGeometry(getRandomInt(100, 250), 20, 20);
+    var geometry = new THREE.SphereGeometry(radius, 20, 20);
 
     var material = new THREE.ShaderMaterial({
       uniforms: uniforms,
@@ -52,9 +53,13 @@ AFRAME.registerComponent('planet', {
 
     var sphere = new THREE.Mesh(geometry, material);
 
-    // var ringGeometry = new THREE.RingGeometry
+    var ringGeometry = new THREE.RingGeometry(radius, radius + getRandomInt(50, 70), 25);
+    var ringMaterial = new THREE.MeshBasicMaterial( {wireframe: true});
+    var ring = new THREE.Mesh(ringGeometry, ringMaterial);
 
     this.el.setObject3D('mesh', sphere);
+    this.el.setObject3D('ring', ring);
+
 
   }
 
