@@ -39,25 +39,25 @@
       <a-assets>
         <script id="planetOrbit" type="template/nunjucks">
           <a-entity animation__rotate="property: rotation; dur: {{ duration }}; easing: {{ easing }}; loop: true; to: 0 360 0">
-            <a-entity planet position="0 0 {{ orbitradius }}"
+            <a-entity planet="rings: true" position="0 0 {{ orbitradius }}"
               animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0">
             </a-entity>
           </a-entity>
         </script>
       </a-assets>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-2500" data-easing="linear" data-duration="25000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-2500" data-easing="linear" data-duration="25000" data-isRings="false"
           position="0 0 0">
       </a-entity>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-4000" data-easing="linear" data-duration="60000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-4000" data-easing="linear" data-duration="60000" data-isRings="false"
           position="0 0 0">
       </a-entity>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-4700" data-easing="linear" data-duration="82000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-4700" data-easing="linear" data-duration="82000" data-isRings="true"
           position="0 0 0">
       </a-entity>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-7000" data-easing="linear" data-duration="115000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-7000" data-easing="linear" data-duration="115000" data-isRings ="false"
           position="0 0 0">
       </a-entity>
-      <a-entity template="src: #planetOrbit" data-orbitradius="-8500" data-easing="linear" data-duration="150000"
+      <a-entity template="src: #planetOrbit" data-orbitradius="-8500" data-easing="linear" data-duration="150000" data-isRings="true"
           position="0 0 0">
       </a-entity>
       <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
