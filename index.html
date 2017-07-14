@@ -10,6 +10,29 @@
     <script src="https://unpkg.com/aframe-point-component/dist/aframe-point-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="bundle.js"></script>
+    <script id="fragmentshader" type="x-shader/x-fragment">
+
+
+      uniform vec3 color1;
+      uniform vec3 color2;
+      varying vec2 vUv;
+
+      void main() {
+        gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+      }
+
+
+    </script>
+    <script id="vertexshader" type="x-shader/x-vertex">
+
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+      }
+
+    </script>
+
   </head>
   <body>
     <a-scene>
@@ -37,33 +60,10 @@
       <a-entity template="src: #planetOrbit" data-orbitradius="-8500" data-easing="linear" data-duration="150000"
           position="0 0 0">
       </a-entity>
-
-
       <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black" radius="10000"></a-sky>
     </a-scene>
-    <script id="fragmentshader" type="x-shader/x-fragment">
-
-
-      uniform vec3 color1;
-      uniform vec3 color2;
-      varying vec2 vUv;
-      void main() {
-        gl_FragColor = vec4(mix(color1, color2, vUv.y),1.0);
-      }
-
-
-    </script>
-    <script id="vertexshader" type="x-shader/x-vertex">
-
-      varying vec2 vUv;
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-      }
-
-    </script>
     <script src="./src/starfield.js"></script>
     </body>
 </html>

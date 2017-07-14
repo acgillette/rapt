@@ -24,10 +24,7 @@ AFRAME.registerComponent('planet', {
 
   },
   init: function() {
-    // var uniforms = {
-    //   u_resolution: { type: "v2", value: new THREE.Vector2() },
-    //   texture: { type: "t", value: THREE.ImageUtils.loadTexture( "./src/planetTexture.png" ) }
-    // };
+
 
     var uniforms = {
       "color1" : {
@@ -47,7 +44,6 @@ AFRAME.registerComponent('planet', {
 
     var geometry = new THREE.SphereGeometry(getRandomInt(100, 250), 20, 20);
 
-    // var material = new THREE.MeshPhongMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('./src/planetTextures/3.png') });
     var material = new THREE.ShaderMaterial({
       uniforms: uniforms,
       vertexShader: vShader.text(),
@@ -55,6 +51,8 @@ AFRAME.registerComponent('planet', {
     });
 
     var sphere = new THREE.Mesh(geometry, material);
+
+    // var ringGeometry = new THREE.RingGeometry
 
     this.el.setObject3D('mesh', sphere);
 
