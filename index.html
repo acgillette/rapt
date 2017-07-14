@@ -39,7 +39,7 @@
       <a-assets>
         <script id="planetOrbit" type="template/nunjucks">
           <a-entity animation__rotate="property: rotation; dur: {{ duration }}; easing: {{ easing }}; loop: true; to: 0 360 0">
-            <a-entity planet="rings: true" position="0 0 {{ orbitradius }}"
+            <a-entity planet="rings: {{ isRings }}" position="0 0 {{ orbitradius }}"
               animation="property: rotation; dur: 20000; loop: true; easing: linear; to: 0 360 0">
             </a-entity>
           </a-entity>
