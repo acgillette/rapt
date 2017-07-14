@@ -1,4 +1,6 @@
 var $ = require('jquery');
+var hsl = require('hsl-to-hex');
+
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -6,6 +8,13 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function getRandomColor() {
+  var hue = Math.floor(Math.random() * 360);
+  var saturation = 100;
+  var luminosity = 87.5;
+  var pastel = hsl(hue, saturation, luminosity);
+  return pastel;
+}
 
 
 AFRAME.registerComponent('planet', {
@@ -23,11 +32,11 @@ AFRAME.registerComponent('planet', {
     var uniforms = {
       "color1" : {
       type : "c",
-      value : new THREE.Color(0xFF0000)
+      value : new THREE.Color(getRandomColor())
       },
       "color2" : {
         type : "c",
-        value : new THREE.Color(0x008000)
+        value : new THREE.Color(getRandomColor())
       }
     };
 
