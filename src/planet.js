@@ -34,6 +34,10 @@ AFRAME.registerComponent('planet', {
       "color2" : {
         type : "c",
         value : new THREE.Color(getRandomColor())
+      },
+      "texture" : {
+        type : "t",
+        value : new THREE.TextureLoader().load( "./src/planetTextures/1.png" )
       }
     };
 
