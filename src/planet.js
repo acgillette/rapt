@@ -37,7 +37,7 @@ AFRAME.registerComponent('planet', {
       },
       "texture" : {
         type : "t",
-        value : new THREE.TextureLoader().load( "./src/planetTextures/1.png" )
+        value : new THREE.TextureLoader().load( "./src/planetTextures/3.png" )
       }
     };
 
