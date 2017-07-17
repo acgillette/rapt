@@ -20,6 +20,13 @@ body {
   display:none;
 }
 
+#buttonWrap {
+  margin-top: 100px;
+}
 #fade-button {
   display:none;
+  border-style:solid;
+  padding:50px;
+  text-decoration:none;
+  border-radius: 10px;
 }
