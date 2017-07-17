@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+var $ = require('jquery');
 
 const SAMPLE_LIBRARY = {
   'Grand Piano': [
