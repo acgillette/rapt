@@ -8,7 +8,18 @@ body {
   text-align:center;
 }
 
-.main h1 {
+
+
+#logo {
   font-family: 'Anurati', sans-serif;
   font-size: 100px;
+  display:none;
+}
+
+.fade-text {
+  display:none;
+}
+
+#fade-button {
+  display:none;
 }
