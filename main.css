@@ -8,8 +8,6 @@ body {
   text-align:center;
 }
 
-
-
 #logo {
   font-family: 'Anurati', sans-serif;
   font-size: 100px;
@@ -25,8 +23,11 @@ body {
 }
 #fade-button {
   display:none;
-  border-style:solid;
+  font-size: 50px;
   padding:50px;
   text-decoration:none;
   border-radius: 10px;
+  font-family: 'Anurati', sans-serif;
+  border: solid;
+
 }
