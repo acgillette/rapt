@@ -11,7 +11,8 @@ function getRandomInt(min, max) {
 function getRandomColor() {
   var hue = Math.floor(Math.random() * 360);
   var saturation = 100;
-  var luminosity = 87.5;
+  //87.5
+  var luminosity = 70;
   var pastel = hsl(hue, saturation, luminosity);
   return pastel;
 }
@@ -37,7 +38,7 @@ AFRAME.registerComponent('planet', {
       },
       "texture" : {
         type : "t",
-        value : new THREE.TextureLoader().load( "./src/planetTextures/3.png" )
+        value : new THREE.TextureLoader().load( "./src/planetTextures/4.png" )
       }
     };
 
