@@ -37,7 +37,7 @@ AFRAME.registerComponent('planet', {
       },
       "texture" : {
         type : "t",
-        value : new THREE.TextureLoader().load( "./src/planetTextures/4.png" )
+        value : new THREE.TextureLoader().load( "./src/planetTextures/" + getRandomInt(1, 5) + ".png" )
       }
     };
 
@@ -61,9 +61,7 @@ AFRAME.registerComponent('planet', {
     this.el.setObject3D('mesh', sphere);
 
     var randRings = getRandomInt(0, 2);
-    console.log(randRings);
 
-    console.log(this.data.rings);
     if (randRings === 1) {
       var ringGeometry = new THREE.RingGeometry(radius + 10, radius + getRandomInt(50, 70), 25);
       var ringMaterial = new THREE.MeshBasicMaterial( {wireframe: true});
