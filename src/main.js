@@ -1,3 +1,3 @@
-require('./terrain.js');
-require('./musicforairports.js');
-require('./planet.js');
+require('./src/terrain.js');
+require('./src/musicforairports.js');
+require('./src/planet.js');
