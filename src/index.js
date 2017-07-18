@@ -6,7 +6,6 @@ $(document).ready(function() {
   $(".raptLogo").fadeIn(2000, function() {
     $('#logo').fadeIn(5000, function() {
       $('.fade-text').fadeIn(5000, function() {
-        $('#fade-button').fadeIn(3000);
       });
     });
   });
