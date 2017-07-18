@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.html",
-  "scripts": {
-    "start": "webpack-dev-server --open"
-  },
   "babel": {
     "presets": [
       "env"
