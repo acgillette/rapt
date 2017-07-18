@@ -127,41 +127,38 @@ function startLoop(instrument, note, destination, loopLength, delaySeconds) {
 
 
 $(document).ready(function() {
-  $(".startRapt").click(function() {
-    console.log("hi");
+  $(".a-enter-vr-button").click(function() {
+    fetchSample('./src/AirportTerminal.wav').then(convolverBuffer => {
+      let convolver = audioContext.createConvolver();
+      convolver.buffer = convolverBuffer;
+      convolver.connect(audioContext.destination);
+
+      //
+      // startLoop('Chorus', 'F4',  convolver, 19.7, 4.0);
+      // startLoop('Chorus', 'Ab4', convolver, 17.8, 8.1);
+      // startLoop('Chorus', 'C5',  convolver, 21.3, 5.6);
+      // startLoop('Chorus', 'Db5', convolver, 22.1, 12.6);
+      // startLoop('Chorus', 'Eb5', convolver, 18.4, 9.2);
+      // startLoop('Chorus', 'F5',  convolver, 20.0, 14.1);
+      // startLoop('Chorus', 'Ab5', convolver, 17.7, 3.1);
+
+      startLoop('Grand Piano', 'F4',  convolver, 19.7, 4.0);
+      startLoop('Grand Piano', 'Ab4', convolver, 17.8, 8.1);
+      startLoop('Grand Piano', 'C5',  convolver, 21.3, 5.6);
+      startLoop('Grand Piano', 'Db5', convolver, 22.1, 12.6);
+      startLoop('Grand Piano', 'Eb5', convolver, 18.4, 9.2);
+      startLoop('Grand Piano', 'F5',  convolver, 20.0, 14.1);
+      startLoop('Grand Piano', 'Ab5', convolver, 17.7, 3.1);
+
+      // startLoop('English Horn', 'F4',  convolver, 19.7, 4.0);
+      // startLoop('English Horn', 'Ab4', convolver, 17.8, 8.1);
+      // startLoop('English Horn', 'C5',  convolver, 21.3, 5.6);
+      // startLoop('English Horn', 'Db5', convolver, 22.1, 12.6);
+      // startLoop('English Horn', 'Eb5', convolver, 18.4, 9.2);
+      // startLoop('English Horn', 'F5',  convolver, 20.0, 14.1);
+      // startLoop('English Horn', 'Ab5', convolver, 17.7, 3.1);
+
+    });
+
   });
 });
-fetchSample('./src/AirportTerminal.wav').then(convolverBuffer => {
-  let convolver = audioContext.createConvolver();
-  convolver.buffer = convolverBuffer;
-  convolver.connect(audioContext.destination);
-
-  //
-  // startLoop('Chorus', 'F4',  convolver, 19.7, 4.0);
-  // startLoop('Chorus', 'Ab4', convolver, 17.8, 8.1);
-  // startLoop('Chorus', 'C5',  convolver, 21.3, 5.6);
-  // startLoop('Chorus', 'Db5', convolver, 22.1, 12.6);
-  // startLoop('Chorus', 'Eb5', convolver, 18.4, 9.2);
-  // startLoop('Chorus', 'F5',  convolver, 20.0, 14.1);
-  // startLoop('Chorus', 'Ab5', convolver, 17.7, 3.1);
-
-  startLoop('Grand Piano', 'F4',  convolver, 19.7, 4.0);
-  startLoop('Grand Piano', 'Ab4', convolver, 17.8, 8.1);
-  startLoop('Grand Piano', 'C5',  convolver, 21.3, 5.6);
-  startLoop('Grand Piano', 'Db5', convolver, 22.1, 12.6);
-  startLoop('Grand Piano', 'Eb5', convolver, 18.4, 9.2);
-  startLoop('Grand Piano', 'F5',  convolver, 20.0, 14.1);
-  startLoop('Grand Piano', 'Ab5', convolver, 17.7, 3.1);
-
-  // startLoop('English Horn', 'F4',  convolver, 19.7, 4.0);
-  // startLoop('English Horn', 'Ab4', convolver, 17.8, 8.1);
-  // startLoop('English Horn', 'C5',  convolver, 21.3, 5.6);
-  // startLoop('English Horn', 'Db5', convolver, 22.1, 12.6);
-  // startLoop('English Horn', 'Eb5', convolver, 18.4, 9.2);
-  // startLoop('English Horn', 'F5',  convolver, 20.0, 14.1);
-  // startLoop('English Horn', 'Ab5', convolver, 17.7, 3.1);
-
-
-
-
-})
