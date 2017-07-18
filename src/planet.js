@@ -20,8 +20,7 @@ function getRandomColor() {
 
 AFRAME.registerComponent('planet', {
   schema: {
-    moons: {type: 'int', default: 0},
-    rings: {type: 'boolean', default: 'false'}
+    moons: {type: 'int', default: 0}
 
   },
   init: function() {
@@ -61,17 +60,24 @@ AFRAME.registerComponent('planet', {
 
     this.el.setObject3D('mesh', sphere);
 
+    var randRings = getRandomInt(0, 2);
+    console.log(randRings);
+
     console.log(this.data.rings);
-    if (this.data.rings === true) {
+    if (randRings === 1) {
       var ringGeometry = new THREE.RingGeometry(radius + 10, radius + getRandomInt(50, 70), 25);
       var ringMaterial = new THREE.MeshBasicMaterial( {wireframe: true});
       var ring = new THREE.Mesh(ringGeometry, ringMaterial);
-      ring.rotation.x = Math.PI / 2;
+      ring.rotation.x = Math.PI / 2 + 10;
 
       this.el.setObject3D('ring', ring);
 
     }
 
+
+  },
+
+  update: function(oldData) {
 
   }
 
