@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg4498"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
+  <defs
+     id="defs4492" />
+  <metadata
+     id="metadata4495">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <flowRoot
+       transform="matrix(0.26458333,0,0,0.26458333,24.946429,0.75595238)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:Anurati;-inkscape-font-specification:Anurati;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot4500"
+       xml:space="preserve"><flowRegion
+         id="flowRegion4502"><rect
+           y="362.51968"
+           x="248.57143"
+           height="377.14285"
+           width="280"
+           id="rect4504" /></flowRegion><flowPara
+         id="flowPara4506">R</flowPara></flowRoot>    <ellipse
+       ry="49.136902"
+       rx="52.538689"
+       cy="123.8869"
+       cx="108.47916"
+       id="path4508"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="70.303574"
+       rx="71.059525"
+       cy="124.64286"
+       cx="108.85714"
+       id="path5053"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="90.336304"
+       rx="87.690468"
+       cy="127.28868"
+       cx="108.85715"
+       id="path5055"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="8.6934528"
+       rx="9.0714283"
+       cy="97.806541"
+       cx="66.523811"
+       id="path5057"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="5.6696429"
+       rx="5.2916665"
+       cy="129.55655"
+       cx="179.91667"
+       id="path5059"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       ry="9.0714283"
+       rx="9.8273811"
+       cy="219.89285"
+       cx="103.56547"
+       id="path5061"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

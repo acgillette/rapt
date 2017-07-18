@@ -30,3 +30,12 @@ body {
   color:black;
 
 }
+
+#img-logo {
+  width: 200px;
+  height: 200px;
+}
+
+.raptLogo {
+  display:none;
+}

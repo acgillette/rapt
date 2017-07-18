@@ -1,8 +1,16 @@
+var gapBetweenEach = 10;
+var speedOfFade = 150;
 
 $(document).ready(function() {
-  $('#logo').fadeIn(5000, function() {
-    $('.fade-text').fadeIn(5000, function() {
-      $('#fade-button').fadeIn(3000);
+
+  $(".raptLogo").fadeIn(2000, function() {
+    $('#logo').fadeIn(5000, function() {
+      $('.fade-text').fadeIn(5000, function() {
+        $('#fade-button').fadeIn(3000);
+      });
     });
   });
+
+
+
 });

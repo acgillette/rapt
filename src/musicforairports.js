@@ -125,6 +125,12 @@ function startLoop(instrument, note, destination, loopLength, delaySeconds) {
   );
 }
 
+
+$(document).ready(function() {
+  $(".startRapt").click(function() {
+    console.log("hi");
+  });
+});
 fetchSample('./src/AirportTerminal.wav').then(convolverBuffer => {
   let convolver = audioContext.createConvolver();
   convolver.buffer = convolverBuffer;
