@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'anurati';
+    src: url('./src/fonts/Anurati-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
   background: #3A1C71;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #FFAF7B, #D76D77, #3A1C71) fixed;  /* Chrome 10-25, Safari 5.1-6 */
@@ -13,7 +21,7 @@ p {
 }
 
 #logo {
-  font-family: 'Anurati', sans-serif;
+  font-family: 'anurati', sans-serif;
   font-size: 100px;
   display:none;
 }
@@ -29,7 +37,7 @@ p {
   font-size: 50px;
   padding:50px;
   text-decoration:none;
-  font-family: 'Anurati', sans-serif;
+  font-family: 'anurati', sans-serif;
   color:black;
 
 }
