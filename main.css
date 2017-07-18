@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'anurati';
-    src: url('./src/fonts/Anurati-Regular.otf') format('otf');
+    src: url('./src/fonts/Anurati-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }
