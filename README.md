@@ -19,3 +19,8 @@ RaptVR was built over the course of the month as my final assignment for Ada Dev
 * JQuery
 * Web Audio API
 * Webpack
+
+## Current Issues
+* Gradient background does not appear on mobile browsers
+* Web Audio script does not play on mobile browsers
+* Font is not loading
