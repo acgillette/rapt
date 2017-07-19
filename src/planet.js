@@ -64,7 +64,7 @@ AFRAME.registerComponent('planet', {
 
     if (randRings === 1) {
       var ringGeometry = new THREE.RingGeometry(radius + 10, radius + getRandomInt(50, 70), 25);
-      var ringMaterial = new THREE.MeshBasicMaterial( {wireframe: true});
+      var ringMaterial = new THREE.MeshBasicMaterial( { color: getRandomColor(), wireframe: true });
       var ring = new THREE.Mesh(ringGeometry, ringMaterial);
       ring.rotation.x = Math.PI / 2 + 10;
 
