@@ -128,6 +128,15 @@ function startLoop(instrument, note, destination, loopLength, delaySeconds) {
 
 $(document).ready(function() {
   $(".a-enter-vr-button").click(function() {
+    var source = myContext.createBufferSource();
+    source.buffer = myDecodedBuffer;
+
+    // connect to output (your speakers)
+    source.connect(myContext.destination);
+
+    // play the file
+    source.noteOn(0);
+
     fetchSample('./src/AirportTerminal.wav').then(convolverBuffer => {
       let convolver = audioContext.createConvolver();
       convolver.buffer = convolverBuffer;
