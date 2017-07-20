@@ -5,7 +5,7 @@
 ## How To Use
 * Clone the repo onto your local environment on your desktop.
 * Run npm install
-* When installation is finished, run npm run.
+* When installation is finished, run webpack-dev-server --open.
 * The app should automatically open on your localhost in the browser.
 * If you'd like to view it on your phone for use with google cardboard, [ngrok](https://ngrok.com/) is a useful tool for tunneling your localhost into a url.
 
@@ -17,7 +17,7 @@ RaptVR was built over the course of the month as my final assignment for Ada Dev
 * Three.js
 * GLSL
 * JQuery
-* Web Audio API
+* Tone.js
 * Webpack
 
 ## Current Issues
