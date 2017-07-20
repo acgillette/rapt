@@ -41,6 +41,7 @@ a:hover {
   font-family: 'anurati', sans-serif;
   font-size: 100px;
   display:none;
+  opacity: 0.5;
 }
 
 .fade-text {
@@ -58,6 +59,7 @@ a:hover {
   text-decoration:none;
   font-family: 'anurati', sans-serif;
   color:black;
+  opacity: 0.5;
 
 }
 
