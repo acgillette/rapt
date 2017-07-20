@@ -37,14 +37,7 @@ vibratoAmount: 0.1
 
 $(document).ready(function() {
   $(".a-enter-vr-button").click(function() {
-    // var source = myContext.createBufferSource();
-    // source.buffer = myDecodedBuffer;
-    //
-    // // connect to output (your speakers)
-    // source.connect(myContext.destination);
-    //
-    // // play the file
-    // source.noteOn(0);
+
 
     let leftSynth = makeSynth();
     let rightSynth = makeSynth();

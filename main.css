@@ -24,6 +24,15 @@ p {
   font-weight: lighter;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #BE6076;
+}
+
 .main {
   text-align:center;
 }
@@ -37,6 +46,8 @@ p {
 .fade-text {
   display:none;
 }
+
+
 
 #buttonWrap {
   margin-top: 100px;
@@ -56,5 +67,9 @@ p {
 }
 
 .raptLogo {
+  display:none;
+}
+
+.fade-enter {
   display:none;
 }

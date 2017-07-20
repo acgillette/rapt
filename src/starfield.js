@@ -8,7 +8,7 @@ function getRandomInt(min, max) {
   return (Math.floor(Math.random() * (max - min)) + min);
 }
 
-for(var i = 0; i < 30000; i++) {
+for(var i = 0; i < 10000; i++) {
   stars.push([ getRandomInt(-5000, 5000), getRandomInt(-5000, 5000), getRandomInt(-5000, 5000) ]);
 }
 
