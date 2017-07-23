@@ -73,18 +73,38 @@ AFRAME.registerComponent('planet', {
 
     }
 
-    var moonCount = getRandomInt(2, 4);
+    var moonCount = getRandomInt(-1, 8);
     console.log(moonCount);
+
 
 
     if(moonCount > 0) {
       for(var i = 1; i < moonCount; i++) {
+        var uniforms2 = {
+          "color1" : {
+          type : "c",
+          value : new THREE.Color(getRandomColor())
+          },
+          "color2" : {
+            type : "c",
+            value : new THREE.Color(getRandomColor())
+          },
+          "texture" : {
+            type : "t",
+            value : new THREE.TextureLoader().load( "./src/planetTextures/" + getRandomInt(1, 5) + ".png" )
+          }
+        };
+
         var moonGeometry = new THREE.SphereGeometry(getRandomInt(10, 30), 20, 20);
-        var moonMaterial = new THREE.MeshBasicMaterial( { wireframe: true });
+        var moonMaterial = new THREE.ShaderMaterial({
+          uniforms: uniforms2,
+          vertexShader: vShader.text(),
+          fragmentShader: fShader.text()
+        });
         var randMoonZ = getRandomInt(0, 2);
 
         var moon = new THREE.Mesh(moonGeometry, moonMaterial);
-        moon.position.set(-10, getRandomInt(-radius, radius), randMoonZ === 1 ? (radius + 50) : -(radius+ 50));
+        moon.position.set(getRandomInt(-radius, radius), 0, randMoonZ === 1 ? (radius + 70) : -(radius + 70));
         console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
 
         this.el.setObject3D('moon' + i, moon);
