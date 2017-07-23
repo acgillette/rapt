@@ -75,14 +75,16 @@ AFRAME.registerComponent('planet', {
 
     var moonCount = getRandomInt(2, 4);
     console.log(moonCount);
-    var moonGeometry = new THREE.SphereGeometry(getRandomInt(10, 30), 20, 20);
-    var moonMaterial = new THREE.MeshBasicMaterial( { wireframe: true });
 
 
     if(moonCount > 0) {
       for(var i = 1; i < moonCount; i++) {
+        var moonGeometry = new THREE.SphereGeometry(getRandomInt(10, 30), 20, 20);
+        var moonMaterial = new THREE.MeshBasicMaterial( { wireframe: true });
+        var randMoonZ = getRandomInt(0, 2);
+
         var moon = new THREE.Mesh(moonGeometry, moonMaterial);
-        moon.position.set(0, getRandomInt(-100, 100), radius + 30);
+        moon.position.set(-10, getRandomInt(-radius, radius), randMoonZ === 1 ? (radius + 50) : -(radius+ 50));
         console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
 
         this.el.setObject3D('moon' + i, moon);
