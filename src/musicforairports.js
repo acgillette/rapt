@@ -49,7 +49,8 @@ vibratoAmount: 0.1
 }
 
 $(document).ready(function() {
-  var musicToggle = window.location.search.split('?')[1].split("=")[1];
+  var musicToggle = window.location.search ? window.location.search.split('?')[1].split("=")[1] : "true";
+
   $(".a-enter-vr-button").click(function() {
 
 

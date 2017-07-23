@@ -72,6 +72,15 @@ AFRAME.registerComponent('planet', {
 
     }
 
+    var moonCount = getRandomInt(-1, 3);
+
+    if(moonCount > 0) {
+      for(var i = 1; i < moonCount; i++) {
+        console.log("here is moon");
+      }
+    }
+
+
 
   },
 
