@@ -31,10 +31,24 @@
           Created by <a href="http://www.acgillette.net/" target="_blank">AC Gillette</a>
         </p>
         <section id="buttonWrap">
-          <a href="/rapt.html" class="startRapt" id="fade-button">ENTER</a>
+          <a href="#" class="startRapt" id="fade-button">ENTER</a>
         </section>
       </section>
 
     </section>
+    <script type="text/javascript">
+      var musicToggle = true;
+      $("#musicOn").click(function(){
+        musicToggle = true;
+      });
+      $("#musicOff").click(function() {
+        musicToggle = false;
+      });
+      $("#fade-button").click(function() {
+        var url = "/rapt.html?music=" + encodeURIComponent(musicToggle);
+        window.location.href = url;
+      });
+
+    </script>
   </body>
 </html>

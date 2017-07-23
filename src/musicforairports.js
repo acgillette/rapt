@@ -1,4 +1,5 @@
 var $ = require('jquery');
+var musicOn = true;
 
 const EQUALIZER_CENTER_FREQUENCIES = [
   100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 1600,
@@ -48,6 +49,7 @@ vibratoAmount: 0.1
 }
 
 $(document).ready(function() {
+  var musicToggle = window.location.search.split('?')[1].split("=")[1];
   $(".a-enter-vr-button").click(function() {
 
 
@@ -125,7 +127,9 @@ $(document).ready(function() {
 
   }, '37m').start();
 
-  Tone.Transport.start();
+  if(musicToggle === "true") {
+    Tone.Transport.start();
+  }
 
   });
 });
