@@ -56,6 +56,7 @@ AFRAME.registerComponent('planet', {
     });
 
     var sphere = new THREE.Mesh(geometry, material);
+    console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
 
 
     this.el.setObject3D('mesh', sphere);
@@ -72,13 +73,24 @@ AFRAME.registerComponent('planet', {
 
     }
 
-    var moonCount = getRandomInt(-1, 3);
+    var moonCount = getRandomInt(2, 4);
+    console.log(moonCount);
+    var moonGeometry = new THREE.SphereGeometry(getRandomInt(10, 30), 20, 20);
+    var moonMaterial = new THREE.MeshBasicMaterial( { wireframe: true });
+
 
     if(moonCount > 0) {
       for(var i = 1; i < moonCount; i++) {
-        console.log("here is moon");
+        var moon = new THREE.Mesh(moonGeometry, moonMaterial);
+        moon.position.set(0, getRandomInt(-100, 100), radius + 30);
+        console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
+
+        this.el.setObject3D('moon' + i, moon);
+        console.log(this.el.getObject3D('moon' + i));
+
       }
     }
+
 
 
 

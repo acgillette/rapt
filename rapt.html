@@ -10,8 +10,8 @@
     <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-point-component/dist/aframe-point-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="./dist/bundle.js"></script>
-    <!-- <script src="bundle.js"></script> -->
+    <!-- <script src="./dist/bundle.js"></script> -->
+    <script src="bundle.js"></script>
 
     <script id="fragmentshader" type="x-shader/x-fragment">
 
@@ -64,6 +64,7 @@
       <a-entity template="src: #planetOrbit" data-orbitradius="-8500" data-easing="linear" data-duration="150000" data-isRings="rings: true"
           position="0 0 0">
       </a-entity>
+      <a-entity planet position="0 151 -2000"></a-entity>
       <a-entity terrain position="-1030 -113 862" rotation="-90 0 0"></a-entity>
       <a-point position="0 0 0" color="#fff" size="1" perspective="true"></a-point>
       <a-sky color="black" radius="10000"></a-sky>
