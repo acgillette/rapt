@@ -51,7 +51,7 @@ $(document).ready(function() {
   $(".a-enter-vr-button").click(function() {
 
 
-    let leftSynth = makeSynth();
+  let leftSynth = makeSynth();
   let rightSynth = makeSynth();
 
   let leftPanner = new Tone.Panner(-0.5).toMaster();
