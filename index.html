@@ -38,10 +38,18 @@
     </section>
     <script type="text/javascript">
       var musicToggle = true;
+
+      $("#musicOn").addClass("toggledMusic");
       $("#musicOn").click(function(){
+        $("#musicOn").addClass("toggledMusic");
+        $("#musicOff").removeClass("toggledMusic");
+
         musicToggle = true;
       });
       $("#musicOff").click(function() {
+        $("#musicOff").addClass("toggledMusic");
+        $("#musicOn").removeClass("toggledMusic");
+
         musicToggle = false;
       });
       $("#fade-button").click(function() {

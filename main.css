@@ -33,6 +33,11 @@ a:hover {
   color: #BE6076;
 }
 
+.toggledMusic {
+  text-decoration: underline;
+  color: #BE6076;
+}
+
 .main {
   text-align:center;
 }
