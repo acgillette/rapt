@@ -80,3 +80,7 @@ a:hover {
 .fade-enter {
   display:none;
 }
+
+.musicButton {
+  margin: 2%;
+}
