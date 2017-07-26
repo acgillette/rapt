@@ -56,7 +56,6 @@ AFRAME.registerComponent('planet', {
     });
 
     var sphere = new THREE.Mesh(geometry, material);
-    console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
 
 
     this.el.setObject3D('mesh', sphere);
@@ -74,7 +73,6 @@ AFRAME.registerComponent('planet', {
     }
 
     var moonCount = getRandomInt(-1, 5);
-    console.log(moonCount);
 
 
 
@@ -105,10 +103,8 @@ AFRAME.registerComponent('planet', {
 
         var moon = new THREE.Mesh(moonGeometry, moonMaterial);
         moon.position.set(getRandomInt(-radius, radius), 0, randMoonZ === 1 ? (radius + 70) : -(radius + 70));
-        console.log(sphere.position.x + ", " + sphere.position.y + ", " + sphere.position.z);
 
         this.el.setObject3D('moon' + i, moon);
-        console.log(this.el.getObject3D('moon' + i));
 
       }
     }
