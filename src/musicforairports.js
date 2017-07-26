@@ -129,7 +129,7 @@ $(document).ready(function() {
   }, '37m').start();
 
   if(musicToggle === "true") {
-    Tone.Transport.start();
+    Tone.Transport.start("+0.1");
   }
 
   });
